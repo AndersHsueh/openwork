@@ -49,6 +49,18 @@ import {
   SUPPORTED_LOCALES,
   type SupportedLocale,
 } from '../utils/locale';
+import {
+  getProviderSettings,
+  setActiveProvider,
+  getConnectedProvider,
+  setConnectedProvider,
+  removeConnectedProvider,
+  updateProviderModel,
+  setProviderDebugMode,
+  getProviderDebugMode,
+  hasReadyProvider,
+} from '../store/providerSettings';
+import type { ProviderId, ConnectedProvider, BedrockCredentials } from '@accomplish/shared';
 import { getDesktopConfig } from '../config';
 import {
   startPermissionApiServer,

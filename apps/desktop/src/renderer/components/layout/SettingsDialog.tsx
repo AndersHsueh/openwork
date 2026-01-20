@@ -201,17 +201,6 @@ export default function SettingsDialog({ open, onOpenChange, onApiKeySaved }: Se
     }
   };
 
-  const fetchDebugSetting = async () => {
-    try {
-      const debug = await accomplish.getDebugMode();
-      setDebugMode(debug);
-    } catch (err) {
-      console.error('Failed to fetch debug setting:', err);
-    } finally {
-      setLoadingDebug(false);
-    }
-  };
-
   const fetchVersion = async () => {
     try {
       const version = await accomplish.getVersion();
@@ -302,7 +291,6 @@ export default function SettingsDialog({ open, onOpenChange, onApiKeySaved }: Se
     if (!open) return;
     
     fetchKeys();
-    fetchDebugSetting();
     fetchVersion();
     fetchSelectedModel();
     fetchOllamaConfig();
